@@ -9,8 +9,8 @@ The goal was to develop Deep Learning models that can reconstruct molecules as b
 
 The entire work is reported and performed using Google Colab in the notebook below.
 
+**Title** | **Notebook** | **Notebook on Colab**
 |------------ | ------------- | ------------ |
-| 
 Molecular Syntesis & Reconstruction | [notebook](.) | [![Open in Colab](.)] |
 
 The whole project is divided into parts:
