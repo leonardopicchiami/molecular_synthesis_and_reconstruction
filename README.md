@@ -39,7 +39,7 @@ It has been observed that the ZINC dataset was used very often for the SMILE str
 
 ### Preprocessing
 
-In preprocessing it was first of all chosen to choose the approach to transform the representation as a SMILE string. In order not to obtain excessively large sparse arrays with too much padding, after observing the distribution of the lengths of the strings, we have chosen to use only SMILE strings of length $\leq$ 60. In order to evaluate the goodness of the reconstruction, it was decided to split the main dataset in *train set* e *test set*: *train set* 70% - *test set* 30%. The training phase was carried out only in the train set.
+In preprocessing it was first of all chosen to choose the approach to transform the representation as a SMILE string. In order not to obtain excessively large sparse arrays with too much padding, after observing the distribution of the lengths of the strings, we have chosen to use only SMILE strings of length minus or equal than 60. In order to evaluate the goodness of the reconstruction, it was decided to split the main dataset in *train set* e *test set*: *train set* 70% - *test set* 30%. The training phase was carried out only in the train set.
 
 
 
