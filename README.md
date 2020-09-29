@@ -58,9 +58,8 @@ For both models, different training sessions were carried out with specific tuni
 
 In the reconstruction phase, the best model of both types was evaluated for its goodness in reconstructing the molecules. The reconstruction consists in obtaining the representation in latent space and then it is reconstructed obtaining the starting molecule. The more the model has learned latent space well, the better it will be able to return to the starting molecule. It was decided to observe the accuracy of the molecule reconstruction and the validity ratio of the reconstructed molecules both on the test set and on the train set.
 
-- For the Convolutional Encoder - Convolutional Decoder
+For the Convolutional Encoder - Convolutional Decoder:
 
-&nbsp;
 
 | Dataset| Recontruction | Validity  
 |---|---|---|
@@ -69,9 +68,8 @@ In the reconstruction phase, the best model of both types was evaluated for its 
 
 &nbsp;
 
-- For the Convolutional Encoder - GRU + Linear Decoder 
+For the Convolutional Encoder - GRU + Linear Decoder: 
 
-&nbsp;
 
 | Dataset| Recontruction | Validity  
 |---|---|---|
