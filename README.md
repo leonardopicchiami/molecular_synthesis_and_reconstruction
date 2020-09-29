@@ -73,12 +73,12 @@ Furthermore, it was decided to choose two different starting molecules to genera
 
 Given ![](https://latex.codecogs.com/gif.latex?\mathcal{G}) the set of chemically valid molecules, ![](https://latex.codecogs.com/gif.latex?\mathcal{D}) the train set, ![](https://latex.codecogs.com/gif.latex?n) the number of syntatically valid generated molecules ![](https://latex.codecogs.com/gif.latex?n_{samp}), the following metrics were used to evaluate the generation of molecules:
 
-- *Ratio Syntactically Validity*:
+
   
   ![]("https://latex.codecogs.com/gif.latex?Ratio\&space;Chemical\&space;Validity:\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\frac{n}{n_{samp}}")
    
     
-  
+  - *Ratio Syntactically Validity*:
   
 - *Ratio Chemical Validity*: ![](https://latex.codecogs.com/gif.latex?\frac{|\mathcal{G}|}{n})
 - ![](https://latex.codecogs.com/gif.latex?Uniqness:&space;\vspace{0.5cm}&space;\frac{|set(\mathcal{G})|}{n})
