@@ -75,11 +75,11 @@ Given ![](https://latex.codecogs.com/gif.latex?\mathcal{G}) the set of chemicall
 
 
   
-  ![](https://latex.codecogs.com/gif.latex?Ratio\&space;Chemical\&space;Validity:\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\frac{n}{n_{samp}})
+![](https://latex.codecogs.com/gif.latex?Ratio\&space;Chemical\&space;Validity:\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\frac{n}{n_{samp}})
+  
+![](https://latex.codecogs.com/gif.latex?Ratio\&space;Chemical\&space;Validity:&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\frac{|\mathcal{G}|}{n})
    
     
-  - *Ratio Syntactically Validity*:
-  
 - *Ratio Chemical Validity*: ![](https://latex.codecogs.com/gif.latex?\frac{|\mathcal{G}|}{n})
 - ![](https://latex.codecogs.com/gif.latex?Uniqness:&space;\vspace{0.5cm}&space;\frac{|set(\mathcal{G})|}{n})
 - *Novelty*: ![](https://latex.codecogs.com/gif.latex?1&space;-&space;\frac{|\mathcal{G}&space;\cap&space;\mathcal{D}|}{|\mathcal{G}|})
