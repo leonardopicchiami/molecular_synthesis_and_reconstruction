@@ -110,7 +110,7 @@ where TanimotoSim is the Tanimoto Similarity defined as:
   <img src= "https://latex.codecogs.com/gif.latex?TanimotoSim(A,&space;B)&space;=&space;\frac{A&space;\cdot&space;B}{||A||^2&space;&plus;&space;||B||^2&space;-&space;A&space;\cdot&space;B}" />
 
 
-
+The scores are reported only in the notebook.
 
 
 
