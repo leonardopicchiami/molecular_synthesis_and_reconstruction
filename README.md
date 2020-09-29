@@ -71,7 +71,7 @@ To generate new molecules, it was chosen to start from a molecule (i.e. from the
 
 Furthermore, it was decided to choose two different starting molecules to generate new molecules not present in the train set. For each of these, 5000 samples were made for each possible value of the standard deviation.
 
-For both model types these samplings were carried out and they were evaluated following the following metrics:
+Given ![](https://latex.codecogs.com/gif.latex?\mathcal{G}) the set of chemically valid molecules, $\mathcal{D}$ the train set, $n$ the number of syntatically valid generated molecules $n_{samp}$, the following metrics were used to evaluate the generation of molecules:
 
 - *Ratio Syntactically Validity*: $\frac{n}{n_{samp}}$
 - *Ratio Chemical Validity*: $|\frac{\mathcal{G}}{n}|$
