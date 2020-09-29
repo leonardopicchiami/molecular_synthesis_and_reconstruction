@@ -66,7 +66,6 @@ For the Convolutional Encoder - Convolutional Decoder:
 | train |  99.91%  | 99.94%  |
 | test  |  96.80%  | 97.91%  |
 
-&nbsp;
 
 For the Convolutional Encoder - GRU + Linear Decoder: 
 
