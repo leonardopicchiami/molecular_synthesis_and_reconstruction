@@ -75,14 +75,15 @@ Given ![](https://latex.codecogs.com/gif.latex?\mathcal{G}) the set of chemicall
 
 
   
-![](https://latex.codecogs.com/gif.latex?Ratio\&space;Chemical\&space;Validity:\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\frac{n}{n_{samp}})
+![](https://latex.codecogs.com/gif.latex?Syntatic\&space;Validity\&space;Ratio:\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\frac{n}{n_{samp}})
   
-![](https://latex.codecogs.com/gif.latex?Ratio\&space;Chemical\&space;Validity:&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\frac{|\mathcal{G}|}{n})
+![](https://latex.codecogs.com/gif.latex?Chemical\&space;Validity\&space;Ratio:&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\frac{|\mathcal{G}|}{n})
    
-    
-- *Ratio Chemical Validity*: ![](https://latex.codecogs.com/gif.latex?\frac{|\mathcal{G}|}{n})
-- ![](https://latex.codecogs.com/gif.latex?Uniqness:&space;\vspace{0.5cm}&space;\frac{|set(\mathcal{G})|}{n})
-- *Novelty*: ![](https://latex.codecogs.com/gif.latex?1&space;-&space;\frac{|\mathcal{G}&space;\cap&space;\mathcal{D}|}{|\mathcal{G}|})
+![](https://latex.codecogs.com/gif.latex?Uniqness:&space;\vspace{0.5cm}&space;\frac{|set(\mathcal{G})|}{n})   
+
+![](https://latex.codecogs.com/gif.latex?Novelty:\&space;\&space;\&space;\&space;1&space;-&space;\frac{|\mathcal{G}&space;\cap&space;\mathcal{D}|}{|\mathcal{G}|})
+
+
 - *Similarity Ratio*: ![](https://latex.codecogs.com/gif.latex?\frac{\sum_{i=0}^{|\mathcal{G}|}&space;\sum_{j=i&plus;1}^{|\mathcal{G}|}&space;TanimotoSim(\mathcal{G}_i,&space;\mathcal{G}_j)}{\frac{|\mathcal{G}|(|\mathcal{G}|-&space;1)}{2}})
 
 where TanimotoSim is the Tanimoto Similarity defined as:
