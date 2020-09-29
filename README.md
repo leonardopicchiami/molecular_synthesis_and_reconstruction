@@ -71,17 +71,20 @@ To generate new molecules, it was chosen to start from a molecule (i.e. from the
 
 Furthermore, it was decided to choose two different starting molecules to generate new molecules not present in the train set. For each of these, 5000 samples were made for each possible value of the standard deviation.
 
-Given ![](https://latex.codecogs.com/gif.latex?\mathcal{G}) the set of chemically valid molecules, $\mathcal{D}$ the train set, $n$ the number of syntatically valid generated molecules $n_{samp}$, the following metrics were used to evaluate the generation of molecules:
+Given ![](https://latex.codecogs.com/gif.latex?\mathcal{G}) the set of chemically valid molecules, ![](https://latex.codecogs.com/gif.latex?\mathcal{D}) the train set, ![](https://latex.codecogs.com/gif.latex?n) the number of syntatically valid generated molecules ![](https://latex.codecogs.com/gif.latex?n_{samp}), the following metrics were used to evaluate the generation of molecules:
 
-- *Ratio Syntactically Validity*: $\frac{n}{n_{samp}}$
-- *Ratio Chemical Validity*: $|\frac{\mathcal{G}}{n}|$
-- *Uniqness*: $\frac{|set(\mathcal{G})|}{n}$
-- *Novelty*: $1 - \frac{|\mathcal{G} \cap \mathcal{D}|}{|\mathcal{G}|}$
-- *Similarity Ratio*: $\frac{\sum_{i=0}^{|\mathcal{G}|} \sum_{j=i+1}^{|\mathcal{G}|} TanimotoSim(\mathcal{G}_i, \mathcal{G}_j)}{\frac{|\mathcal{G}|(|\mathcal{G}|- 1)}{2}}$
+- *Ratio Syntactically Validity*: ![](https://latex.codecogs.com/gif.latex?\frac{n}{n_{samp}})
+- *Ratio Chemical Validity*: ![](https://latex.codecogs.com/gif.latex?\frac{|\mathcal{G}|}{n})
+- *Uniqness*: ![](https://latex.codecogs.com/gif.latex?\frac{|set(\mathcal{G})|}{n})
+- *Novelty*: ![](https://latex.codecogs.com/gif.latex?1&space;-&space;\frac{|\mathcal{G}&space;\cap&space;\mathcal{D}|}{|\mathcal{G}|})
+- *Similarity Ratio*: ![](https://latex.codecogs.com/gif.latex?\frac{\sum_{i=0}^{|\mathcal{G}|}&space;\sum_{j=i&plus;1}^{|\mathcal{G}|}&space;TanimotoSim(\mathcal{G}_i,&space;\mathcal{G}_j)}{\frac{|\mathcal{G}|(|\mathcal{G}|-&space;1)}{2}})
 
 where TanimotoSim is the Tanimoto Similarity defined as:
 
-$$TanimotoSim(A, B) = \frac{A \cdot B}{||A||^2 + ||B||^2 - A \cdot B}$$
+
+<p align = "center">
+  <img src= "https://latex.codecogs.com/gif.latex?TanimotoSim(A,&space;B)&space;=&space;\frac{A&space;\cdot&space;B}{||A||^2&space;&plus;&space;||B||^2&space;-&space;A&space;\cdot&space;B}" />
+
 
 
 
