@@ -11,7 +11,7 @@ The entire work is reported and performed using Google Colab in the notebook bel
 
 **Title** | **Notebook** | **Notebook on Colab**
 |------------ | ------------- | ------------ |
-Molecular Syntesis & Reconstruction | [notebook](./Molecular_Synthesis_&_Reconstruction.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](./Molecular_Synthesis_&_Reconstruction.ipynb)] |
+Molecular Syntesis & Reconstruction | [notebook](Molecular_Synthesis_&_Reconstruction.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](Molecular_Synthesis_&_Reconstruction.ipynb) |
 
 Here is a brief summary of what is reported in the notebook.
 
