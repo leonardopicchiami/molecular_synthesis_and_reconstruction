@@ -75,11 +75,7 @@ Given ![](https://latex.codecogs.com/gif.latex?\mathcal{G}) the set of chemicall
 
 - *Ratio Syntactically Validity*:
   
-  <p align = "center">
-    <img src= "https://latex.codecogs.com/gif.latex?\frac{n}{n_{samp}}" />
-  
-  <p align = "center">
-     <img src= "https://latex.codecogs.com/gif.latex?Ratio\&space;Chemical\&space;Validity:\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\frac{n}{n_{samp}}" />
+  ![]("https://latex.codecogs.com/gif.latex?Ratio\&space;Chemical\&space;Validity:\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\&space;\frac{n}{n_{samp}}")
    
     
   
