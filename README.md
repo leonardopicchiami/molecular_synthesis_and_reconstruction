@@ -75,7 +75,7 @@ Given ![](https://latex.codecogs.com/gif.latex?\mathcal{G}) the set of chemicall
 
 - *Ratio Syntactically Validity*: ![](https://latex.codecogs.com/gif.latex?\frac{n}{n_{samp}})
 - *Ratio Chemical Validity*: ![](https://latex.codecogs.com/gif.latex?\frac{|\mathcal{G}|}{n})
-- *Uniqness*: ![](https://latex.codecogs.com/gif.latex?\frac{|set(\mathcal{G})|}{n})
+- ![](https://latex.codecogs.com/gif.latex?Uniqness: \frac{|set(\mathcal{G})|}{n})
 - *Novelty*: ![](https://latex.codecogs.com/gif.latex?1&space;-&space;\frac{|\mathcal{G}&space;\cap&space;\mathcal{D}|}{|\mathcal{G}|})
 - *Similarity Ratio*: ![](https://latex.codecogs.com/gif.latex?\frac{\sum_{i=0}^{|\mathcal{G}|}&space;\sum_{j=i&plus;1}^{|\mathcal{G}|}&space;TanimotoSim(\mathcal{G}_i,&space;\mathcal{G}_j)}{\frac{|\mathcal{G}|(|\mathcal{G}|-&space;1)}{2}})
 
