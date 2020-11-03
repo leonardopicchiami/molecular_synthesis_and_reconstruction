@@ -11,7 +11,7 @@ The entire work is reported and performed using Google Colab in the notebook bel
 
 **Title** | **Notebook** | **Notebook on Colab**
 |------------ | ------------- | ------------ |
-Molecular Syntesis & Reconstruction | [notebook](https://github.com/leonardopicchiami/molecular_synthesis_and_reconstruction/blob/master/Molecular_Synthesis_%26_Reconstruction.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/gist/leonardopicchiami/80320970244190bc7f1bb95460d6137b/molecular-synthesis-reconstruction.ipynb?authuser=2) |
+Molecular Syntesis & Reconstruction | [notebook](https://github.com/leonardopicchiami/molecular_synthesis_and_reconstruction/blob/master/Molecular%20Synthesis%20%26%20Reconstruction.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/leonardopicchiami/molecular_synthesis_and_reconstruction/blob/master/Molecular_Synthesis_%26_Reconstruction.ipynb) |
 
 Here is a brief summary of what is reported in the notebook.
 
