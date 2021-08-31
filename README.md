@@ -5,17 +5,18 @@ This is the Python repository about the Deep Learning And Applied Artificial Int
 
 ## Goal Description
 
-The goal was to develop Deep Learning models that can reconstruct molecules as best as possible and generate new molecules. The idea was to analyze the paper [[1]](#1): choose a representation of the molecules among the proposed one, choose a type of model and try different models of the same type (RNN, VAE, AAE, GAN ..) and choose different metrics on which evaluate models. The actual goal has been to get models that reconstruct and generate new ones in a good enough way compared to other models that are state of the art.
+The goal was to develop Deep Learning models that can reconstruct molecules from low dimensional space representation and generate new molecules. Starting from the paper [[1]](#1), we chose a fixed representation of the molecules among the proposed ones; we selected a type of model (e.g., RNN, VAE, AAE, GAN ..) and, we designed several versions of the chosen model. Finally, we evaluated models by using several metrics. We aimed to improve the current state-of-the-art performances and results.
 
-The entire work is reported and performed using Google Colab in the notebook below.
+We performed the entire work using Google Colab in the notebook below.
 
 **Title** | **Notebook** | **Notebook on Colab**
 |------------ | ------------- | ------------ |
 Molecular Syntesis & Reconstruction | [notebook](https://github.com/leonardopicchiami/molecular_synthesis_and_reconstruction/blob/master/Molecular_Synthesis_%26_Reconstruction.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/gist/leonardopicchiami/80320970244190bc7f1bb95460d6137b/molecular-synthesis-reconstruction.ipynb?authuser=2) |
 
-Here is a brief summary of what is reported in the notebook.
+Below is a summary of what is reported in the notebook.
 
-The whole project is divided into parts:
+The whole project is divided as follows:
+
 - Molecular Representation & Dataset
 - Preprocessing
 - Models Building and Training 
@@ -23,40 +24,46 @@ The whole project is divided into parts:
 - Molecules Synthesis 
 
 
+We used [PyTorch](https://pytorch.org) to buid and traint each Deep Learning developed model.
+
 
 ### Molecular Representation & Dataset
 
-Among the representations presented in the paper, it was chosen to use the representation as a SMILE string. [[1]](#1) shows the various models present in the state of the art and for each model:
+Among the representations presented by the paper, we selected the SMILE string representation. [[1]](#1) shows several state-of-the-art works and, for each one is reported:
 
-- the chosen architecture.
-- the representation of the molecules used.
-- the dataset used.
-- the number of examples in the dataset.
+- the model architecture.
+- the selected representation of the molecules.
+- the chosen dataset.
+- the number of molecules in the dataset.
 
-It has been observed that the ZINC dataset was used very often for the SMILE string representation. More specifically, a subset of the ZINC dataset that contains approximately 250,000 examples called ZINC250K. It was therefore decided to use the ZINC250K dataset for this work.
+In literature, many authors used the ZINC dataset to provide an experimental evaluation for the designed approach. Since the ZINC dataset contains millions of molecules, many works show a smaller and cleaned ZINC dataset (*i.e.*, a subset of the main ZINC dataset) to present new reconstruction and synthesis approaches. This dataset, called ZINC250K, contains approximately 250,000 examples. We decided to use the ZINC250K dataset for this work.
 
 
 
 ### Preprocessing
 
-In preprocessing it was first of all chosen to choose the approach to transform the representation as a SMILE string. In order not to obtain excessively large sparse arrays with too much padding, after observing the distribution of the lengths of the strings, we have chosen to use only SMILE strings of length minus or equal than 60. In order to evaluate the goodness of the reconstruction, it was decided to split the main dataset in *train set* e *test set*: *train set* 70% - *test set* 30%. The training phase was carried out only in the train set.
+In the preprocessing phase, we designed how to transform the chosen SMILE string representation in a tensor. To avoid excessively large sparse tensors with too much padding, we selected only SMILE strings at most 60 characters since the distribution of the lengths of the strings showed that the majority of the SMILE strings present a length at most 60.
 
+To perform this task, we split the ZINC250K in *train set* e *test set*: *train set* 70% - *test set* 30% by select only the strings with length at most 60. Clearly, the training phase was carried out only in the train set.
 
 
 ### Models Building and Training
 
-The chosen models type is the VAE (Varational Autoencoder). Two different VAEs have been implemented:
+We chose to use VAE (Variational Autoencoder). We implemented two different VAEs:
 
 - Convolutional Encoder - Convolutional Decoder
 - Convolutional Encoder - GRU (Multi-layer) + Linear layer
 
-For both models, different training sessions were carried out with specific tuning set for 35 training epochs. Having observed that in both models it is not necessary to have 35 epochs to obtain an efficient model, a new instance of each of the two model types with the most efficient setting out of 35 epochs has been trained for a smaller number of epochs resulting in truly efficient models.
+For both models, we carried out training sessions for 35 epochs with several ad-hoc hyperparameters tunings. 
 
+The results show that, for both developed models, we can train every model for fewer epochs. This can lead to having equally efficient models.   Consequently, we chose the most efficient hyperparameter tuning for every model and, we re-trained each model for a smaller number of epochs. The results show truly efficient models.
 
 
 ### Molecules Reconstruction
 
-In the reconstruction phase, the best model of both types was evaluated for its goodness in reconstructing the molecules. The reconstruction consists in obtaining the representation in latent space and then it is reconstructed obtaining the starting molecule. The more the model has learned latent space well, the better it will be able to return to the starting molecule. It was decided to observe the accuracy of the molecule reconstruction and the validity ratio of the reconstructed molecules both on the test set and on the train set.
+In the reconstruction phase, we evaluated the best model (in terms of accuracy) for both types to establish its goodness in reconstructing the molecules. Reconstructing a given molecule means, firstly, encoding it in the latent space representation. Then, decoding it from the latent space representation to get the starting representation. 
+
+The goal is to allow the model to learn the latent space as good as possible. This enables the potential for the model to perform an encoding-decoding task with an exact representation of the starting molecule as result. We evaluated every model the accuracy of the molecules reconstruction and the validity ratio of the reconstructed molecules both on the test set and train set. 
 
 For the Convolutional Encoder - Convolutional Decoder:
 
@@ -80,14 +87,17 @@ For the Convolutional Encoder - GRU + Linear Decoder:
 
 ### Molecules Synthesis
 
-In the synthesis phase, new molecules were generated by sampling from the prior distribution chosen for the latent space. To generate new molecules:
+In the synthesis phase, we synthesised new molecules by sampling from the prior distribution chosen for the latent space. We used the following formula:
 
 <p align = "center">
   <img src= "https://latex.codecogs.com/gif.latex?stdev&space;\times&space;\mathcal{N}(0,&space;1)&space;&plus;&space;latent" />
 
-To generate new molecules, it was chosen to start from a molecule (i.e. from the representation of the latent space of the chosen molecule) and perturb it through the above formula in order to obtain new molecules (topologically similar). The only unknown data in the formula is the standard deviation *stdev*. To observe the generation as we move further and further away from the starting molecule it was decided to use the following values for *stdev*: [0.045, 0.065, 0.085]. So it was decided to make 5000 samples for each of the three chosen values.
+We generated new topologically similar molecules starting from a given molecule. This molecule has to be mapped in the latent space representation since we used it as a mean for the above-mentioned formula (*i.e.*, the latent operand). Basically, we perturbed it by fixing a standard deviation, called *stdev*, and sampling from the normal distribution.
 
-Furthermore, it was decided to choose two different starting molecules to generate new molecules not present in the train set. For each of these, 5000 samples were made for each possible value of the standard deviation.
+We performed several experiments in this direction. In particular, we choose two different molecules and three different standard deviation values. We sampled 5000 potential molecules for each chosen starting molecule and chosen standard deviation value. We chose *Aspirine* and *Tamiflu* as starting molecules. We selected the following standard deviation values: [0.045, 0.065, 0.085].
+
+To validate the synthesis of new molecules we planned to select molecules that are not in the ZINC250K dataset.
+
 
 Given ![](https://latex.codecogs.com/gif.latex?\mathcal{G}) the set of chemically valid molecules, ![](https://latex.codecogs.com/gif.latex?\mathcal{D}) the train set, ![](https://latex.codecogs.com/gif.latex?n) the number of syntatically valid generated molecules, ![](https://latex.codecogs.com/gif.latex?n_{samp}) the number of sampling done, the following metrics were used to evaluate the generation of molecules:
 
@@ -116,11 +126,11 @@ The scores are reported only in the notebook.
 
 ## Description and Requirements
 
-Python 3 was used for the development of the system. The system was developed and tested on 64-bit Python 3.6 and 64-bit Python 3.7 on Linux Systems. It has been partially and locally developed and tested on Linux distros: Linux Mint and Ubuntu. However, the main tasks of the work were developed and carried out on Google Colab. The core of the project is in the jupyter-notebook, so there are no specific scripts for evaluation, train, synthesis and so on.
+Python 3 was used for the development of the system. We developed and tested the system using 64-bit Python 3.6 and 64-bit Python 3.7 on Linux Systems.  Partially, we locally developed it on Linux distros: Linux Mint and Ubuntu. However, we performed the majority of the whole work on Google Colab. Since the core of the project is in the jupyter-notebook, we do not provide specific scripts for several sub-tasks such as evaluation, train and synthesis.
 
-As future developments it is planned to develop specific scripts that allow these computations locally or on machines other than those of Google Colab.
+As future developments, we plan to develop specific scripts that allow these computations locally or on High-Performance Computing (HPC) machines.
 
-The libraries used:
+We used the following libraries:
 
 - NumPy
 - PyTorch (torch and torchvision)
@@ -131,7 +141,7 @@ The libraries used:
 - Plotly
 - RDKit
 
-RDKit is a library for Chioinformatics and Machine Learning widely used in the current state of the art.
+RDKit is a library for Cheminformatics and Machine Learning widely used in literature.
 
 
 ## References
